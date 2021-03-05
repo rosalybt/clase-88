@@ -1,4 +1,7 @@
-import './App.css';
+// En este proyecto usamos SASS: no necesitamos tener archivos de css
+// ni compilar los de sass a css. De eso se encarga React :)
+import './App.scss';
+import Tarjeta from './components/Tarjeta';
 
 const productos = [
   {
@@ -412,11 +415,16 @@ const producto =   {
   "thumbnail": "http://mla-s1-p.mlstatic.com/909111-MLA31239994076_062019-I.jpg",
 }
 
+// Trabajando por librerias en React
+// elegimos la libreria que queremos (por ejemplo sass)
+// vamos a la consola, en nuestra carpeta
+// corremos el comando: npm install {nombre de la libreria}
+// Y listo! 
+
 const App = () => {
   return (
     <div>
-
-    Hola!
+     <Tarjeta title={producto.title} price={producto.price}/>
     </div>
   );
 }
