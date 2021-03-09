@@ -1,16 +1,21 @@
 import './Tarjeta.scss';
+import imagenCamion from '../imgs/camion .jpeg';
 
-const Tarjeta = ({ price, title }) => {
-  console.log('props de Tarjeta', price, title);
+const Tarjeta = ({price, title, freeShipping, imagen }) => {
+  console.log('props de Tarjeta', price, title, freeShipping);
 
-  const mostrarTitulo = false;
+  const mostrarTitulo = true;
 
   return (
     <article className="tarjeta"> 
 
+    <img src={imagen} />
+    
     {mostrarTitulo && <h4>{title}</h4>}
 
       <h5>{price}</h5>
+
+      {freeShipping === true && <img src={imagenCamion}/>}
 
       {/* TAREA:
       El objeto "producto" en App.js tiene una propiedad "free_shipping"

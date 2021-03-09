@@ -406,14 +406,6 @@ const productos = [
   }
 ]
 
-const producto =   {
-  "id": "MLA819328068",
-  "title": "Motorola G6 Plus 64 Gb Índigo Oscuro 4 Gb Ram",
-  "price": 28599,
-  "condition": "new",
-  "free_shipping": true,
-  "thumbnail": "http://mla-s1-p.mlstatic.com/909111-MLA31239994076_062019-I.jpg",
-}
 
 // Trabajando por librerias en React
 // elegimos la libreria que queremos (por ejemplo sass)
@@ -421,10 +413,30 @@ const producto =   {
 // corremos el comando: npm install {nombre de la libreria}
 // Y listo! 
 
+
 const App = () => {
+  
+  const mostrarTarjetas = false 
   return (
-    <div>
-     <Tarjeta title={producto.title} price={producto.price}/>
+    <div className="contenedor-tarjetas">
+     
+     
+   <Tarjeta 
+      imagen={productos[0].thumbnail} 
+      title={productos[0].title} 
+      price={productos[0].price} 
+      freeShipping={productos[0].free_shipping}
+      />
+
+    {/* {
+      productos.map(producto => {
+        return <Tarjeta
+          imagen={producto.thumbnail} 
+          title={producto.title} 
+          price={producto.price} 
+          freeShipping={producto.free_shipping}/>
+      })
+    } */}
     </div>
   );
 }

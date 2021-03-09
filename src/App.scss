@@ -1,4 +1,11 @@
 body {
   background-color: lightskyblue;
-  margin: 0
+  margin: 0;
+  .contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap
+  }
+  .contenedor-vacio {
+    background: red
+  }
 }
