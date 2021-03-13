@@ -1,22 +1,31 @@
 import './Tarjeta.scss';
 import imagenCamion from '../imgs/camion .jpeg';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faStar } from '@fortawesome/free-solid-svg-icons'
+// import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons'
 
-const Tarjeta = ({price, title, freeShipping, imagen }) => {
-  console.log('props de Tarjeta', price, title, freeShipping);
+const Tarjeta = ({ price, title, freeShipping, imagen }) => {
+
 
   const mostrarTitulo = true;
 
   return (
-    <article className="tarjeta"> 
 
-    <img src={imagen} />
-    
-    {mostrarTitulo && <h4>{title}</h4>}
+
+
+
+    <article className="tarjeta">
+
+      <img src={imagen} alt="img" />
+
+      {mostrarTitulo && <h4>{title}</h4>}
 
       <h5>{price}</h5>
 
-      {freeShipping === true && <img src={imagenCamion}/>}
+      {freeShipping && <img src={imagenCamion} alt="imagen" />}
 
+      {/* <FontAwesomeIcon icon={faStar} />
+      <FontAwesomeIcon icon={faStarRegular} /> */}
       {/* TAREA:
       El objeto "producto" en App.js tiene una propiedad "free_shipping"
        que se refiere al envio gratuito

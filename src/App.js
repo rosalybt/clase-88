@@ -1,5 +1,3 @@
-// En este proyecto usamos SASS: no necesitamos tener archivos de css
-// ni compilar los de sass a css. De eso se encarga React :)
 import './App.scss';
 import Tarjeta from './components/Tarjeta';
 
@@ -415,28 +413,21 @@ const productos = [
 
 
 const App = () => {
-  
-  const mostrarTarjetas = false 
+
   return (
     <div className="contenedor-tarjetas">
-     
-     
-   <Tarjeta 
-      imagen={productos[0].thumbnail} 
-      title={productos[0].title} 
-      price={productos[0].price} 
-      freeShipping={productos[0].free_shipping}
-      />
 
-    {/* {
-      productos.map(producto => {
-        return <Tarjeta
-          imagen={producto.thumbnail} 
-          title={producto.title} 
-          price={producto.price} 
-          freeShipping={producto.free_shipping}/>
-      })
-    } */}
+      {
+        productos.map(producto => {
+          return <Tarjeta
+            imagen={producto.thumbnail}
+            title={producto.title}
+            price={'$ ' + producto.price}
+            freeShipping={producto.free_shipping}
+          />
+        })
+      }
+
     </div>
   );
 }
